@@ -28,7 +28,7 @@ CREATE TABLE `horas` (
   `idhoras` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idhoras`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `horas` (
 
 LOCK TABLES `horas` WRITE;
 /*!40000 ALTER TABLE `horas` DISABLE KEYS */;
+INSERT INTO `horas` VALUES (1,'10-11'),(2,'11-12'),(3,'12-13'),(4,'13-14'),(5,'14-15'),(6,'15-16'),(7,'16-17'),(8,'18-19'),(9,'19-20'),(10,'20-21'),(11,'21-22');
 /*!40000 ALTER TABLE `horas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +83,7 @@ CREATE TABLE `players` (
   KEY `fk_reservas_idx` (`idreserva`),
   CONSTRAINT `fk_reservas` FOREIGN KEY (`idreserva`) REFERENCES `reservas` (`idreserva`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_users` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,6 +92,7 @@ CREATE TABLE `players` (
 
 LOCK TABLES `players` WRITE;
 /*!40000 ALTER TABLE `players` DISABLE KEYS */;
+INSERT INTO `players` VALUES (1,1,1,'arantxa'),(2,1,1,'sergio');
 /*!40000 ALTER TABLE `players` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,10 +108,13 @@ CREATE TABLE `reservas` (
   `fecha_creacion` date DEFAULT current_timestamp(),
   `fecha_reserva` date DEFAULT NULL,
   `idhora` int(11) DEFAULT NULL,
+  `idpista` int(11) DEFAULT NULL,
   PRIMARY KEY (`idreserva`),
   KEY `fk_horas_idx` (`idhora`),
-  CONSTRAINT `fk_horas` FOREIGN KEY (`idhora`) REFERENCES `horas` (`idhoras`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+  KEY `fk_pista_idx` (`idpista`),
+  CONSTRAINT `fk_horas` FOREIGN KEY (`idhora`) REFERENCES `horas` (`idhoras`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pista` FOREIGN KEY (`idpista`) REFERENCES `pista` (`idpista`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,6 +123,7 @@ CREATE TABLE `reservas` (
 
 LOCK TABLES `reservas` WRITE;
 /*!40000 ALTER TABLE `reservas` DISABLE KEYS */;
+INSERT INTO `reservas` VALUES (1,'2024-05-06','2024-05-09',1,1);
 /*!40000 ALTER TABLE `reservas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,4 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-06 17:47:48
+-- Dump completed on 2024-05-06 18:49:14
