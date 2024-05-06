@@ -3,7 +3,7 @@ if (isset($_POST["username"])) {
     include("conexion.php");
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $email = $_POST["email"];
+ 
     // Procesar la imagen
     $image = $_FILES["file"]["name"];
     $target_dir = "assets/img/";
@@ -53,12 +53,12 @@ if (isset($_POST["username"])) {
         // Si todo está bien, intenta subir el archivo
     } else {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            $sql = "insert into user (username,email,password,image) values (?,?,?,?)";
+            $sql = "insert into user (username,password,foto) values (?,?,?)";
             $stm = $conn->prepare($sql);
             $stm->bindParam(1, $username);
-            $stm->bindParam(2, $email);
-            $stm->bindParam(3, $password);
-            $stm->bindParam(4, $image);
+          
+            $stm->bindParam(2, $password);
+            $stm->bindParam(3, $foto);
             $stm->execute();
             if ($stm->rowCount() > 0) {
                 $msg = "Usuario creado correctamente";
@@ -74,7 +74,7 @@ if (isset($_POST["username"])) {
 <div class="container row container-register">
     <form class="form register col-md-8 col-sm-12" action="" method="post" enctype="multipart/form-data">
         <input class="form-control" type="text" name="username" id="" placeholder="username">
-        <input class="form-control" type="email" name="email" placeholder="email">
+     
         <input class="form-control" type="password" name="password" placeholder="password">
         <input class="form-control" type="file" name="file" id="">
         <button class="btn btn-success btn-large" type="submit">New user</button>

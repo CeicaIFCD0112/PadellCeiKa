@@ -2,7 +2,7 @@
 // Datos de conexión a la base de datos
 $host = "localhost"; // Cambia esto si tu base de datos está en un servidor diferente
 $usuario_bd = "root"; // Cambia esto por el nombre de usuario de tu base de datos
-$contrasena_bd = ""; // Cambia esto por la contraseña de tu base de datos
+$contrasena_bd = "1234"; // Cambia esto por la contraseña de tu base de datos
 $nombre_bd = "padelceika"; // Cambia esto por el nombre de tu base de datos
 
 // Crear conexión
