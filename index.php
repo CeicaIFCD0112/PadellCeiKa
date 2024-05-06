@@ -47,6 +47,7 @@
     </style>
 </head>
 <body>
+    
     <div class="container">
         <img src="ruta/a/tu/logotipo.png" alt="Logotipo de tu Compañía" class="logo">
         <h1 class="company-name">XTREME PADEL</h1>
