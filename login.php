@@ -42,7 +42,7 @@ if (isset($error)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="assets\css\login.css">
 </head>
 
 <body>
@@ -51,14 +51,14 @@ if (isset($error)) {
             <div class="modal-body">
                 <h5 class="title_login">iniciar sesión</h5>
                 <hr>
-                <input class="form-control email" type="email" name="email" id="" placeholder="Email" required>
-                <input class="form-control" placeholder="Password" type="password" name="password" id="" required>
+                <input class="form-control email" type="email" name="email" id="email" placeholder="Email" required>
+                <input class="form-control" placeholder="Password" type="password" name="password" id="password" required>
             </div>
             <div class="m5px">
                 <button type="submit" class="btn_primary">Login</button>
             </div>
         </form >
-        <a href="register">Create new account</a>
+        <a href="register"><p>Create new account</p></a>
     </div>
 
 

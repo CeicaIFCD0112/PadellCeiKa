@@ -1,24 +1,36 @@
-/* Estilos generales */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Altura de la ventana para centrar verticalmente */
+    height: 100vh;
+    /* Altura de la ventana para centrar verticalmente */
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    background-image: url('../img/fondo1.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 /* Estilos del formulario */
 
 
 
-.title_login{
+.title_login {
     text-align: center;
     text-decoration-style: solid;
+
+
+
+
 }
-.m5px{ 
-margin-bottom: 5px;}
+
+.m5px {
+    margin-bottom: 5px;
+}
 
 
 /* Estilos de los campos de entrada */
@@ -38,10 +50,14 @@ margin-bottom: 5px;}
 /* Estilo de enfoque (cuando el usuario interactúa con el campo) */
 .contenedor-productos input[type="email"]:focus,
 .contenedor-productos input[type="password"]:focus {
-    border-color: #007bff; /* Cambia el color del borde */
-    outline: none; /* Elimina el borde por defecto */
-    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.2); /* Sombra más intensa */
-    background-color: #fff; /* Fondo blanco */
+    border-color: #007bff;
+    /* Cambia el color del borde */
+    outline: none;
+    /* Elimina el borde por defecto */
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.2);
+    /* Sombra más intensa */
+    background-color: #fff;
+    /* Fondo blanco */
 }
 
 
@@ -65,6 +81,14 @@ margin-bottom: 5px;}
 
 
 .btn_primary:focus {
-    background-color: #0056b3; /* Color de fondo más oscuro */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    background-color: #0056b3;
+    /* Color de fondo más oscuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Sombra más intensa */
+}
+
+
+p{
+    font-weight: bold;
+    color:whitesmoke
 }

@@ -1,0 +1,21 @@
+
+
+/* Estilos para centrar los botones y alinearlos de forma horizontal */
+div {
+    display: flex; /* Usar flexbox para organizar los botones */
+    justify-content: center; /* Centrar los botones en el contenedor */
+    align-items: center; /* Centrar los botones verticalmente */
+    height: 100vh; /* Altura completa de la ventana del navegador */
+    gap: 10px; /
+}
+
+/* Estilo básico para los botones */
+.pista {
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s ease; /* Transición suave de color */
+}
+
