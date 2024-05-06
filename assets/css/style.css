@@ -68,6 +68,10 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
 }
+h1{
+    margin-left: 80px;
+    margin-right: 35px;
+}
 
 form {
     max-width: 800px;
@@ -77,7 +81,7 @@ form {
 form input[type="text"],
 form input[type="number"] {
     width: calc(100% - 22px); /* Ajuste para el padding */
-    padding: 10px;
+    padding: 20px;
     margin: 5px 0;
     border: 1px solid #ccc; /* Borde */
     border-radius: 3px;
@@ -85,7 +89,7 @@ form input[type="number"] {
 }
 
 form button {
-    width: 100%;
+    width: 120%;
     padding: 10px;
     margin-top: 10px;
     background-color: #007bff; /* Color de fondo del botón */
