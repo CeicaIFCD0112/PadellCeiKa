@@ -1,27 +1,26 @@
 <?php
 if (isset($_POST["username"])) {
     include("conexion.php");
+
     $username = $_POST["username"];
     $password = $_POST["password"];
- 
-    // Procesar la imagen
-    $image = $_FILES["file"]["name"];
-    $target_dir = "assets/img/";
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
+    // Procesar la imagen
+    $foto = $_FILES["foto"]["name"];
+    $target_dir = "assets/img/";
+    $target_file = $target_dir . basename($_FILES["foto"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
     $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
     // Verificar si la imagen es real o falsa
     if (isset($_POST["submit"])) {
         $check = getimagesize($_FILES["file"]["tmp_name"]);
         if ($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
+            echo "File is an foto - " . $check["mime"] . ".";
             $uploadOk = 1;
         } else {
-            echo "File is not an image.";
+            echo "File is not an foto.";
             $uploadOk = 0;
         }
     }
@@ -33,7 +32,7 @@ if (isset($_POST["username"])) {
     }
 
     // Verificar el tamaño de la imagen
-    if ($_FILES["file"]["size"] > 500000) {
+    if ($_FILES["foto"]["size"] > 500000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -50,21 +49,30 @@ if (isset($_POST["username"])) {
     // Verificar si $uploadOk está configurado en 0 por un error
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
-        // Si todo está bien, intenta subir el archivo
     } else {
-        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            $sql = "insert into user (username,password,foto) values (?,?,?)";
-            $stm = $conn->prepare($sql);
-            $stm->bindParam(1, $username);
-          
-            $stm->bindParam(2, $password);
-            $stm->bindParam(3, $foto);
-            $stm->execute();
-            if ($stm->rowCount() > 0) {
-                $msg = "Usuario creado correctamente";
-            } else {
-                $msg = "Error al crear el Usuario";
+        if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
+            try {
+                $conn = new PDO("mysql:host=$host;dbname=$nombre_bd;charset=utf8", $usuario_bd, $contrasena_bd);
+    
+
+                $sql = "INSERT INTO users (username, password, foto) VALUES (?, ?, ?)";
+                $stm = $conn->prepare($sql);
+                $stm->bindParam(1, $username);
+                $stm->bindParam(2, $password);
+                $stm->bindParam(3, $target_foto);
+                $stm->execute();
+
+                if ($stm->rowCount() > 0) {
+                    $msg = "Usuario creado correctamente";
+                } else {
+                    $msg = "Error al crear el Usuario";
+                }
+            } catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
             }
+            $conn = null;
+        } else {
+            echo "Sorry, there was an error uploading your file.";
         }
     }
 }
@@ -76,7 +84,7 @@ if (isset($_POST["username"])) {
         <input class="form-control" type="text" name="username" id="" placeholder="username">
      
         <input class="form-control" type="password" name="password" placeholder="password">
-        <input class="form-control" type="file" name="file" id="">
+        <input class="form-control" type="file" name="foto" id="">
         <button class="btn btn-success btn-large" type="submit">New user</button>
     </form>
     <?php
