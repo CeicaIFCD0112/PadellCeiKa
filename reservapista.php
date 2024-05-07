@@ -88,7 +88,7 @@ function generarCalendario($mes, $anio)
                 if ($dia < $diaActual && $mes == date('m') && $anio == date('Y')) {
                     $output .= '<td style="text-decoration: line-through;">' . $dia . '</td>';
                 } else {
-                    $output .= '<td><a href="#"  class="dia" onclick="seleccionarDia(' . $dia . ')">' . $dia . '</a></td>';
+                    $output .= '<td><a href="#"  class="dia" onclick="seleccionarDia(this,' . $dia . ')">' . $dia . '</a></td>';
                 }
                 $dia++;
             }
@@ -222,7 +222,8 @@ $horasLibres = getHorasLibres($fecha, $idpista);
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script>
-        function seleccionarDia(dia) {
+        function seleccionarDia(e,dia) {
+            e.parentElement.style.backgroundColor="red"
             // Obtener la URL actual
             var urlActual = new URL(window.location.href);
             //Borro la hora seleccionada si la tiene
@@ -293,6 +294,27 @@ $horasLibres = getHorasLibres($fecha, $idpista);
         </div>
     </div>
     <hr>
+    <script>
+        // Obtener el valor del parámetro 'dia' de la URL
+var urlParams = new URLSearchParams(window.location.search);
+var diaURL = parseInt(urlParams.get('dia'));
+
+// Obtener todos los elementos <a> con la clase 'dia'
+var elementosDia = document.querySelectorAll('.dia');
+
+// Iterar sobre los elementos para encontrar el que coincida con el día de la URL
+elementosDia.forEach(function(elemento) {
+    var contenidoDia = parseInt(elemento.textContent); // Obtener el número del día del contenido del elemento
+    if (contenidoDia === diaURL) {
+        // Si el contenido del elemento coincide con el día de la URL, establecer el color de fondo del <td>
+        var tdElemento = elemento.parentElement;
+        tdElemento.style.backgroundColor = 'lightblue'; // Cambia 'lightblue' por el color que desees
+    }
+});
+var idHoraURL ="hora"+parseInt(urlParams.get('idhora'));
+
+document.getElementById(idHoraURL).style.backgroundColor = 'lightblue';
+    </script>
 </body>
 
 </html>
