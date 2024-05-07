@@ -116,3 +116,23 @@ form button {
 form button:hover {
     background-color: #5a5c5e; /* Color de fondo del botón al pasar el ratón */
 }
+table {
+    width: 80%; /* Ancho de la tabla */
+    margin: 0 auto; /* Centrar la tabla en la página */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px; /* Espaciado interno de las celdas */
+    border: 1px solid #ddd; /* Borde de las celdas */
+    text-align: center; /* Alineación del texto en el centro */
+}
+
+th {
+    background-color: #f2f2f2; /* Color de fondo del encabezado */
+}
+
+/* Estilo para el título */
+h1 {
+    text-align: center; /* Centrar el título en la página */
+}

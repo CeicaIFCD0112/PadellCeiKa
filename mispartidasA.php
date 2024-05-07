@@ -17,7 +17,7 @@ try {
               INNER JOIN horas AS h ON r.idhoras = h.idhoras
               INNER JOIN users AS u ON r.iduser = u.iduser
               INNER JOIN pista AS p ON r.idpista = p.idpista
-              WHERE r.fecha_reserva < NOW() AND r.iduser = :iduser";
+              WHERE r.fecha_reserva >= NOW() AND r.iduser = :iduser";
 
     // Preparar la declaración
     $statement = $conn->prepare($query);
@@ -64,7 +64,7 @@ try {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Mis partidas jugadas</title>
+    <title>Mis partidas pendientes</title>
  
 </head>
 <body>
