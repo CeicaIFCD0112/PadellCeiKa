@@ -64,6 +64,8 @@ if (isset($_POST["username"])) {
 
                 if ($stm->rowCount() > 0) {
                     $msg = "Usuario creado correctamente";
+                    header("Location: register.php");
+                    exit(); 
                 } else {
                     $msg = "Error al crear el Usuario";
                 }
@@ -81,7 +83,7 @@ if (isset($_POST["username"])) {
         <input class="form-control" type="text" name="username" id="" placeholder="username">
   
         <input class="form-control" type="password" name="password" placeholder="password">
-        <input class="form-control" type="file" name="file" id="">
+        <input class="form-control" type="file" name="file" id="" required>
         <button class="btn btn-success btn-large" type="submit">New user</button>
     </form>
     <?php
