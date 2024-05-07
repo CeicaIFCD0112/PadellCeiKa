@@ -1,0 +1,137 @@
+.ocupado{
+    background-color: red;
+    text-decoration: line-through;
+}
+
+.table-sm {
+    font-size: 0.8em;
+}
+
+/* Estilos CSS personalizados */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo {
+    width: 150px;
+    /* Ajusta el tamaño de tu logotipo según sea necesario */
+    height: auto;
+}
+
+.company-name {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.login-button {
+    background-color: yellowgreen;
+    color: blue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: rgba(red, green, blue, alpha);
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.hour-grid {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.form-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="time"],
+.form input[type="submit"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el calendario */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para la tabla de horarios */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    align-content: center;
+    width: 60%;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: right;
+}
+
+th {
+    background-color: #f2f2f2;
+}
