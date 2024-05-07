@@ -1,4 +1,18 @@
 <?php
+session_start();
+if (isset($_GET["pista_id"])) {
+    $idpista = $_GET["pista_id"];
+    $_SESSION["pista_id"] = $idpista;
+} else {
+    if (isset($_SESSION["pista_id"])) {
+        $idpista = $_SESSION["pista_id"];
+    } else {
+        header("Location: ./pistas.php");
+        exit();
+    }
+}
+// Obtener la URL actual
+
 function obtenerNombreMes($mes)
 {
     $nombresMeses = array(
@@ -20,6 +34,7 @@ function obtenerNombreMes($mes)
 
 function generarCalendario($mes, $anio)
 {
+    $urlActual = $_SERVER['REQUEST_URI'];
     // Obtener el nombre completo del mes en castellano
     $nombreMes = obtenerNombreMes($mes);
 
@@ -73,7 +88,7 @@ function generarCalendario($mes, $anio)
                 if ($dia < $diaActual && $mes == date('m') && $anio == date('Y')) {
                     $output .= '<td style="text-decoration: line-through;">' . $dia . '</td>';
                 } else {
-                    $output .= '<td>' . $dia . '</td>';
+                    $output .= '<td><a href="#"  class="dia" onclick="seleccionarDia(' . $dia . ')">' . $dia . '</a></td>';
                 }
                 $dia++;
             }
@@ -151,26 +166,86 @@ function getHoras()
         return "Error: " . $e->getMessage();
     }
 }
-$horas=getHoras();
-$horasLibres=getHorasLibres('20240507',1);
+function getPista($idpista)
+{
+    // Configuración de la conexión a la base de datos
+    include("conexion.php");
+    // Verificar la conexión
+
+
+    // Consulta para obtener las horas reservadas para la fecha y la pista específica
+    $consulta = "SELECT * FROM pista where idpista=?";
+    try {
+        // Preparar la consulta
+        $statement = $conn->prepare($consulta);
+        $statement->bindParam(1, $idpista);
+        // Asignar valores a los parámetros y ejecutar la consulta
+        $statement->execute();
+
+        // Obtener las horas libres
+        $pista = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        // Cerrar la conexión
+        $conexion = null;
+
+        // Devolver las horas libres
+        return $pista;
+    } catch (PDOException $e) {
+        // En caso de error, mostrar el mensaje de error
+        return "Error: " . $e->getMessage();
+    }
+}
+
+$horas = getHoras();
+
+$pista = getPista($idpista)[0];
 
 
 // Obtener el mes y el año actual si no se proporcionan como parámetros
 $mesActual = isset($_GET['mes']) ? $_GET['mes'] : date('m');
 $anioActual = isset($_GET['anio']) ? $_GET['anio'] : date('Y');
+$dia = isset($_GET['dia']) ? $_GET['dia'] : date('d');
+$fecha = $anioActual . sprintf("%02d", $mesActual) . sprintf("%02d", $dia);
+
+
+$horasLibres = getHorasLibres($fecha, $idpista);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horarios y Calendarios</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>
+        function seleccionarDia(dia) {
+            // Obtener la URL actual
+            var urlActual = new URL(window.location.href);
+
+            // Eliminar el parámetro 'dia' actual, si existe
+            urlActual.searchParams.delete('dia');
+
+            // Agregar el parámetro 'dia' con el valor del día seleccionado
+            urlActual.searchParams.append('dia', dia);
+
+            // Redireccionar a la nueva URL
+            window.location.href = urlActual.href;
+        }
+    </script>
+
 </head>
+
 <body>
     <div class="container mt-5">
+        <div>
+            <h3>Pista: <?php echo $pista["nombrepista"]; ?></h3>
+        </div>
         <div class="row">
+
             <div class="col-md-6">
                 <?php echo generarCalendario($mesActual, $anioActual); ?>
             </div>
@@ -184,12 +259,12 @@ $anioActual = isset($_GET['anio']) ? $_GET['anio'] : date('Y');
                     </thead>
                     <tbody>
                         <?php
-                            foreach ($horas as $key => $hora) {
-                                $estado=in_array($hora,$horasLibres)?'libre':'ocupado';
-                                echo "<tr id=hora".$hora['idhoras']."  class='".$estado."'>
-                                <td>".$hora['descripcion']."</td>
+                        foreach ($horas as $key => $hora) {
+                            $estado = in_array($hora, $horasLibres) ? 'libre' : 'ocupado';
+                            echo "<tr id=hora" . $hora['idhoras'] . "  class='" . $estado . "'>
+                                <td>" . $hora['descripcion'] . "</td>
                             </tr>";
-                            }
+                        }
                         ?>
                     </tbody>
                 </table>
@@ -197,10 +272,11 @@ $anioActual = isset($_GET['anio']) ? $_GET['anio'] : date('Y');
         </div>
         <div class="row mt-3">
             <div class="col-md-12">
-                <a href="index.php" class="btn btn-primary">Regresar al Home</a>
+                <a href="pistas.php" class="btn btn-primary">Ver pistas</a>
             </div>
         </div>
     </div>
     <hr>
 </body>
+
 </html>
