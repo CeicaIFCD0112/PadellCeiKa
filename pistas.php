@@ -26,12 +26,12 @@ $pistas = $stm->fetchAll(PDO::FETCH_ASSOC);
         <?php
 
         foreach ($pistas as $key => $pista) {
-            echo '<div class="pista">
-            <img src="assets/img/'.$pista["foto"].'" alt="">
-            <p>'.$pista["nombrepista"].'</p>
-           <a href="reservapista.php?pista_id='.$pista["idpista"].'"><button>Ver pista</button></a>
-        </div>';
-        }
+                echo '<div class="pista">
+                <img src="assets/img/'.$pista["foto"].'" alt="">
+                <p>'.$pista["nombrepista"].'</p>
+            <a href="reservapista.php?pista_id='.$pista["idpista"].'"><button>Ver pista</button></a>
+            </div>';
+            }
         ?>
     </div>
     

@@ -34,7 +34,7 @@ body {
 
 
 /* Estilos de los campos de entrada */
-.contenedor-productos input[type="email"],
+.contenedor-productos input[type="text"],
 .contenedor-productos input[type="password"] {
     width: 100%;
     padding: 12px 15px;
@@ -48,7 +48,7 @@ body {
 }
 
 /* Estilo de enfoque (cuando el usuario interactúa con el campo) */
-.contenedor-productos input[type="email"]:focus,
+.contenedor-productos input[type="text"]:focus,
 .contenedor-productos input[type="password"]:focus {
     border-color: #007bff;
     /* Cambia el color del borde */
