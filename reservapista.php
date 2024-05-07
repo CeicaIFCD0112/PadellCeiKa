@@ -225,12 +225,28 @@ $horasLibres = getHorasLibres($fecha, $idpista);
         function seleccionarDia(dia) {
             // Obtener la URL actual
             var urlActual = new URL(window.location.href);
+            //Borro la hora seleccionada si la tiene
+             // Eliminar el parámetro 'dia' actual, si existe
+             urlActual.searchParams.delete('idhora');
 
             // Eliminar el parámetro 'dia' actual, si existe
             urlActual.searchParams.delete('dia');
 
             // Agregar el parámetro 'dia' con el valor del día seleccionado
             urlActual.searchParams.append('dia', dia);
+
+            // Redireccionar a la nueva URL
+            window.location.href = urlActual.href;
+        }
+        function reservar(idhora) {
+            // Obtener la URL actual
+            var urlActual = new URL(window.location.href);
+
+            // Eliminar el parámetro 'idhora' actual, si existe
+            urlActual.searchParams.delete('idhora');
+
+            // Agregar el parámetro 'dia' con el valor del día seleccionado
+            urlActual.searchParams.append('idhora', idhora);
 
             // Redireccionar a la nueva URL
             window.location.href = urlActual.href;
@@ -262,7 +278,7 @@ $horasLibres = getHorasLibres($fecha, $idpista);
                         foreach ($horas as $key => $hora) {
                             $estado = in_array($hora, $horasLibres) ? 'libre' : 'ocupado';
                             echo "<tr id=hora" . $hora['idhoras'] . "  class='" . $estado . "'>
-                                <td>" . $hora['descripcion'] . "</td>
+                                <td onclick='reservar(".$hora['idhoras'].")'>" . $hora['descripcion'] . "</td>
                             </tr>";
                         }
                         ?>
