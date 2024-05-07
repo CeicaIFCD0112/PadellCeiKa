@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Login</title>
     <!-- Agregar estilos CSS personalizados u hojas de estilo externas aquí -->
     <style>
         /* Estilos CSS personalizados */
@@ -48,7 +48,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="ruta/a/tu/logotipo.png" alt="Logotipo de tu Compañía" class="logo">
+        <img src="assets/img/logo,jpeg" alt="Logotipo de tu Compañía" class="logo">
         <h1 class="company-name">XTREME PADEL</h1>
         <h2>El mejor sitio de padel!!</h2>
         <!-- Aquí puedes agregar el calendario y otras funcionalidades -->
@@ -56,8 +56,8 @@
     </div>
 
     <footer class="footer">
-        <p>Datos de Contacto: contact@example.com | Teléfono: 123-456-7890</p>
-        <p>&copy; <?php echo date("Y"); ?>ARSERILU. Todos los derechos reservados.</p>
+        <p>Xtremme Padel: contact@extremmepadel.com | Teléfono: +1.800-456-7890</p>
+        <p>&copy; <?php echo date("Y"); ?>CONCEPT IDEAS. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
