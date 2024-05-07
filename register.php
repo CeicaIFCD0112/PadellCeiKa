@@ -1,3 +1,6 @@
+
+<?php include("header.php"); ?>
+
 <?php
 if (isset($_POST["username"])) {
     include("conexion.php");
