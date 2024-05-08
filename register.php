@@ -31,10 +31,9 @@ if (isset($_POST["username"])) {
     }
 
     // Verificar si el archivo ya existe
-    if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
+    //if (file_exists($target_file)) {
+       // echo "Sorry, file already exists.";
+        //$uploadOk = 0;    }
 
     // Verificar el tamaño de la imagen
     if ($_FILES["file"]["size"] > 500000) {

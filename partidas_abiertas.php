@@ -22,40 +22,51 @@ if(isset($_SESSION["iduser"])){
 
 try {
     // Preparar la consulta SQL para obtener las partidas jugadas por el usuario logueado
-    $query = "SELECT r.fecha_reserva, h.descripcion, u.username, p.nombrepista 
-              FROM reservas AS r
-              INNER JOIN horas AS h ON r.idhoras = h.idhoras
-              INNER JOIN users AS u ON r.iduser = u.iduser
-              INNER JOIN pista AS p ON r.idpista = p.idpista
-              WHERE r.fecha_reserva >= NOW() AND r.iduser = :iduser";
+    $query = //"SELECT r.fecha_reserva, h.descripcion, u.username, p.nombrepista 
+              //FROM reservas AS r
+              //INNER JOIN horas AS h ON r.idhora = h.idhoras
+              //INNER JOIN users AS u ON r.iduser = u.iduser
+              //INNER JOIN pista AS p ON r.idpista = p.idpista
+             // WHERE r.fecha_reserva >= NOW() AND r.iduser = :iduser";
+
+             " SELECT R.idreserva,H.descripcion,R.fecha_reserva,Pi.nombrepista, count(*) as jugadores 
+             from reservas R 
+             inner join players P on R.idreserva= P.idreserva
+             inner join horas H on H.idhoras=R.idhora
+             inner join pista Pi on R.idpista=Pi.idpista
+            group by P.idreserva,R.idreserva,H.descripcion,Pi.nombrepista, R.fecha_reserva having R.fecha_reserva >= now() and jugadores<4";
+             
+
+              
 
     // Preparar la declaración
     $statement = $conn->prepare($query);
 
     // Asociar el parámetro :iduser con el valor de $iduser
-    $statement->bindValue(':iduser', $iduser);
+   // $statement->bindValue(':iduser', $iduser);
 
     // Ejecutar la consulta
     $statement->execute();
 
     // Obtener todas las filas de resultados como un array asociativo
     $partidas = $statement->fetchAll(PDO::FETCH_ASSOC);
-
+    $tabla="";
     // Si hay partidas encontradas
     if ($partidas) {
-        echo '<table border="1">';
-        echo '<tr><th>Fecha</th><th>Hora</th><th>Participantes</th></tr>';
+        $tabla.= '<table border="1">';
+        $tabla.= '<tr><th>Fecha</th><th>Hora</th><th>Participantes</th><th></th></tr>';
         // Iterar sobre cada partida y mostrar los detalles en filas de tabla
         foreach ($partidas as $reserva) {
-            echo "<tr>";
-            echo "<td>" . $reserva['fecha_reserva'] . "</td>";
-            echo "<td>" . $reserva['descripcion'] . "</td>";
-            // Otros detalles de la partida...
-            echo "</tr>";
+            $tabla.= "<tr>";
+            $tabla.= "<td>" . $reserva['fecha_reserva'] . "</td>";
+            $tabla.= "<td>" . $reserva['descripcion'] . "</td>";
+            $tabla.= "<td>" . $reserva['jugadores'] . "</td>";
+            $tabla.= "<td><a href='partidasabiertas.php?idreserva=".$reserva['idreserva']."'>Apuntarme</a></td>";
+            $tabla.= "</tr>";
         }
-        echo '</table>';
+        $tabla.= '</table>';
     } else {
-        echo "No se encontraron partidas para el usuario.";
+        $tabla.= "No se encontraron partidas para el usuario.";
     }
 } catch (PDOException $e) {
     // En caso de error, mostrar el mensaje de error
@@ -66,28 +77,7 @@ try {
 <div class="diagonal-gradient">
     <!-- Contenido de tu página -->
     <h1>Partidas Abiertas</h1>
-    <table border="1">
-        <tr>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Jugadores</th>
-        </tr>
-        <!-- Aquí puedes agregar las filas de la tabla con los datos de las partidas abiertas -->
-        <tr>
-            <td>Fecha de la partida</td>
-            <td>Hora de la partida</td>
-            <td>Jugador 1, Jugador 2, Jugador 3, Jugador 4</td>
-        </tr>
-        <!-- Puedes repetir este patrón para cada partida abierta -->
-    </table>
-    <form action="procesar_reserva.php" method="post">
-        <input type="hidden" name="pista_id" value="<?php echo $_GET['pista_id']; ?>">
-        <input type="hidden" name="hora" value="<?php echo $_GET['hora']; ?>">
-        <input type="hidden" name="fecha" value="<?php echo $_GET['fecha']; ?>">
-        
-
-        <button type="submit">Reservar</button>
-    </form>
+    <?php  echo $tabla;?>
 </div>
 
 </body>
