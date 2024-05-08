@@ -1,4 +1,33 @@
 <?php
+include("header2.php");
+$username="PEPE"
+?>
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.jpeg" alt="Logo de la Compañía">
+        </div>
+        <div class="company-name">
+            Padel Xtreme
+        </div>
+        <div class="user-actions">
+            <!-- Mostrar imagen de perfil y botón de nombre de usuario -->
+            <div class="user-info">
+                <img src="ruta/a/tu/foto_de_perfil.jpg" alt="Foto de perfil">
+                <button class="user-button"><?php echo $username; ?></button>
+                <div class="dropdown-content">
+                    <a href="#">Editar Perfil</a>
+                    <a href="mispartidasX.php">Partidas Jugadas</a>
+                    <a href="mispartidasA.php">Partidas Pendientes</a>
+                </div>
+            </div>
+            <div class="logout-button">
+                <a href="logout.php">Log Out</a>
+            </div>
+        </div>
+    </div>
+</header>
+<?php
 include 'conexion.php';
 session_start();
 
@@ -14,7 +43,7 @@ try {
     // Preparar la consulta SQL para obtener las partidas jugadas por el usuario logueado
     $query = "SELECT r.fecha_reserva, h.descripcion, u.username, p.nombrepista 
               FROM reservas AS r
-              INNER JOIN horas AS h ON r.idhoras = h.idhoras
+              INNER JOIN horas AS h ON r.idhora = h.idhoras
               INNER JOIN users AS u ON r.iduser = u.iduser
               INNER JOIN pista AS p ON r.idpista = p.idpista
               WHERE r.fecha_reserva < NOW() AND r.iduser = :iduser";
@@ -54,17 +83,3 @@ try {
     echo "Error al obtener las partidas: " . $e->getMessage();
 }
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Mis partidas jugadas</title>
- 
-</head>
-<body>

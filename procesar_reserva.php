@@ -1,19 +1,48 @@
 <?php
-// Conectar a la base de datos
+session_start();
 
-// Recuperar los datos del formulario
-$pista_id = $_POST['pista_id'];
-$hora = $_POST['hora'];
-$fecha = $_POST['fecha'];
-$usuario = $_POST['usuario'];
-$jugadores = $_POST['jugadores'];
-
-// Validar los datos (puedes hacer más validaciones aquí)
-
-// Guardar la reserva en la base de datos
-// Aquí deberías ejecutar una consulta SQL para insertar los datos en la tabla de reservas
-
-// Redirigir de vuelta a la página principal
-header("Location: index.php");
-exit();
+if (isset($_SESSION["iduser"]) && isset($_POST["idreserva"]) && isset($_POST["jugador1"])) {
+    include("conexion.php");
+    $iduser = $_SESSION["iduser"];
+    $idreserva = $_POST["idreserva"];
+    $jugador1 = $_POST["jugador1"];
+    //Guardo el jugador 1
+    $sql = "insert into players (iduser,idreserva,nombre_jugador) values (?,?,?)";
+    $stm = $conn->prepare($sql);
+    $stm->bindParam(1, $iduser);
+    $stm->bindParam(2, $idreserva);
+    $stm->bindParam(3, $jugador1);
+    $stm->execute();
+    $i = 2;
+    do {
+        $jugador = "jugador" . $i;
+        if (isset($_POST[$jugador])) {
+            if ($_POST[$jugador] != "") {
+                $nombre = $_POST[$jugador];
+                $sql = "insert into players (iduser,idreserva,nombre_jugador) values (?,?,?)";
+                $stm = $conn->prepare($sql);
+                $stm->bindParam(1, $iduser);
+                $stm->bindParam(2, $idreserva);
+                $stm->bindParam(3, $nombre);
+                $stm->execute();
+            }
+        }
+        $i++;
+    } while ($i <= 4);
+} else {
+    header("Location: ./");
+}
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="assets/css/procesar.css">
+    <title>Padel</title>
+</head>
+<body>
+    <p>Reserva completada ..</p><a href="./pistas.php">Volver</a>
+</body>
+</html>

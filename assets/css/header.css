@@ -1,0 +1,41 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Altura de la ventana para centrar verticalmente */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../img/fondo1.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+.logo {
+    width: 400px; /* Ajusta el tamaño de tu logotipo según sea necesario */
+    height: auto;
+}
+.company-name {
+    font-size: 48px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+.login-button {
+    background-color: yellowgreen;
+    color: blue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 48px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}

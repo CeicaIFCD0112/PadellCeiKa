@@ -14,7 +14,7 @@ try {
     // Preparar la consulta SQL para obtener las partidas jugadas por el usuario logueado
     $query = "SELECT r.fecha_reserva, h.descripcion, u.username, p.nombrepista 
               FROM reservas AS r
-              INNER JOIN horas AS h ON r.idhoras = h.idhoras
+              INNER JOIN horas AS h ON r.idhora = h.idhoras
               INNER JOIN users AS u ON r.iduser = u.iduser
               INNER JOIN pista AS p ON r.idpista = p.idpista
               WHERE r.fecha_reserva >= NOW() AND r.iduser = :iduser";

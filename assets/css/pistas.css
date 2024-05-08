@@ -1,0 +1,41 @@
+/* Configuración de la cuadrícula para el contenedor */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* O `repeat(3, 1fr)` para 3 columnas */
+    gap: 10px; /* Espacio entre elementos de la cuadrícula */
+    padding: 10px; /* Espacio interno */
+    background-color: #f0f0f0; /* Color de fondo */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Redondeo de bordes */
+    justify-items: stretch;
+    
+    max-width: 100%; /* Limita el ancho del contenedor al 100% de la pantalla */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+}
+.container img,
+
+    
+
+/* Estilos para cada elemento de pista */
+.pista-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* Otros estilos opcionales */
+}
+
+
+h2{
+    text-align: center;
+}
+
+/* Estilos para centrar los botones y alinearlos de forma horizontal */
+div {
+ 
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    justify-items: stretch;
+}
