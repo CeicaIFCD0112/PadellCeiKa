@@ -34,7 +34,6 @@ $news = $stm->fetchAll(PDO::FETCH_ASSOC);
             if ($index % 2 == 0) {
                 // Índice par: texto a la izquierda, imagen a la derecha
                 echo '<div class="text"><h3>' . ($item['news_title']) . '</h3></div>';
-                -
                 echo '<div class="content-block">';
                 echo '<div class="image"><img src="assets/img/' . ($item['news_pic']) . '" alt="Descripción de la imagen"></div>';
 
