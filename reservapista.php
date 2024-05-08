@@ -260,6 +260,7 @@ $horasLibres = getHorasLibres($fecha, $idpista);
     <div class="container mt-5">
         <div>
             <h3>Pista: <?php echo $pista["nombrepista"]; ?></h3>
+            <input type="hidden" id="pista" value="<?php echo $idpista ?>">
         </div>
         <div class="row">
 
@@ -287,6 +288,9 @@ $horasLibres = getHorasLibres($fecha, $idpista);
                 </table>
             </div>
         </div>
+        <div class="row">
+            <button id="btnReserva">Reservar</button>
+        </div>
         <div class="row mt-3">
             <div class="col-md-12">
                 <a href="pistas.php" class="btn btn-primary">Ver pistas</a>
@@ -294,27 +298,7 @@ $horasLibres = getHorasLibres($fecha, $idpista);
         </div>
     </div>
     <hr>
-    <script>
-        // Obtener el valor del parámetro 'dia' de la URL
-var urlParams = new URLSearchParams(window.location.search);
-var diaURL = parseInt(urlParams.get('dia'));
-
-// Obtener todos los elementos <a> con la clase 'dia'
-var elementosDia = document.querySelectorAll('.dia');
-
-// Iterar sobre los elementos para encontrar el que coincida con el día de la URL
-elementosDia.forEach(function(elemento) {
-    var contenidoDia = parseInt(elemento.textContent); // Obtener el número del día del contenido del elemento
-    if (contenidoDia === diaURL) {
-        // Si el contenido del elemento coincide con el día de la URL, establecer el color de fondo del <td>
-        var tdElemento = elemento.parentElement;
-        tdElemento.style.backgroundColor = 'lightblue'; // Cambia 'lightblue' por el color que desees
-    }
-});
-var idHoraURL ="hora"+parseInt(urlParams.get('idhora'));
-
-document.getElementById(idHoraURL).style.backgroundColor = 'lightblue';
-    </script>
+<script src="assets/js/reservapista.js"></script>
 </body>
 
 </html>
