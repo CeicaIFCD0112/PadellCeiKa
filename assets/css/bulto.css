@@ -1,0 +1,41 @@
+ /* Estilos básicos */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.content-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo para los bloques de contenido */
+.content-block {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* Sección de texto */
+.text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+/* Sección de imagen */
+.image {
+    flex: 1;
+}
+
+/* Estilos de imagen */
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Clase para alternar posiciones */
+.content-block.alternate {
+    flex-direction: row-reverse;
+}
