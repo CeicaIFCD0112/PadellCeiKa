@@ -89,13 +89,13 @@ if (isset($_POST["username"])) {
 <body>
 
 
-    <div class="container contenedor-productos row">
+    <div class="container contenedor-productos-r row">
     <form class="form " action="" method="post" enctype="multipart/form-data">
         <input class="form-control" type="text" name="username" id="" placeholder="username">
   
         <input class="form-control" type="password" name="password" placeholder="password">
         <input class="form-control" type="file" name="file" id="" required>
-        <button class="btn btn-success btn-large" type="submit" href="login.php" id="poobtn">New user</button>
+        <button class="btn_primary2" type="submit" href="login.php" id="poobtn">New user</button>
     </form>
     <?php
     if (isset($msg)) {
