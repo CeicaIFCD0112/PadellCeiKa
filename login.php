@@ -19,7 +19,7 @@ if (isset($_POST["username"])) {
             session_start();
             $_SESSION["username"] = $username;
             $_SESSION["iduser"] = $iduser;
-            header("Location: ./pistas");
+            header("Location: ./bulto");
             exit();
         } else {
             $error = "Usuario o Contraseña incorrecto";

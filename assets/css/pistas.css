@@ -39,3 +39,15 @@ div {
     border-radius: 5px;
     justify-items: stretch;
 }
+body {
+
+    /* Altura de la ventana para centrar verticalmente */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../img/fondo1.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

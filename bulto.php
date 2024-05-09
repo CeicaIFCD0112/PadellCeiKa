@@ -22,6 +22,7 @@ $news = $stm->fetchAll(PDO::FETCH_ASSOC);
         // Por ejemplo, puedes reemplazar esto con una consulta de base de datos
         include("header2.php");
 
+
         // Iterar a través de los datos
         foreach ($news as $index => $item) {
             // Alternar las posiciones según el índice (par o impar)

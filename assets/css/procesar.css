@@ -1,0 +1,38 @@
+body {
+
+    /* Altura de la ventana para centrar verticalmente */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../img/fondo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.container {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
+    color:black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Esto asegura que el contenedor ocupe toda la altura de la ventana del navegador */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    text-decoration: none; /* Quitar subrayado */
+    border: none; /* Quitar borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Cambiar el color de fondo al pasar el cursor */
+}

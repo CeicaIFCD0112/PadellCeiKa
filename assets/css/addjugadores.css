@@ -1,8 +1,13 @@
 body {
+
+    /* Altura de la ventana para centrar verticalmente */
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: darkseagreen;
+    background-color: #f0f0f0;
+    background-image: url('../img/fondo1.png');
+
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .container {
     text-align: center;
@@ -28,39 +33,6 @@ body {
     font-size: 48px;
     margin-bottom: 20px;
     cursor: pointer;
-}
-.footer {
-    font-weight: bold;
-    text-align: center;
-    background-color:rgba(218, 165, 32, 0.562);
-    padding: 20px 0;
-    color: #333;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    right: 0;
-}
-.polygon-clipart {
-    width: 100px; /* Ajusta el tamaño del clipart según sea necesario */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Para centrar horizontalmente el clipart */
-    background-color: rgba(0, 255, 76, 0.432);
-}
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, #007bff, #00ff00);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-.diagonal-gradient {
-    background: linear-gradient(to bottom right, #007bff, #00ff00);
-    width: 100%;
-    height: 100vh; /* Ajusta la altura según tus necesidades */
 }
 
 

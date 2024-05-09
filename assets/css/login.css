@@ -34,6 +34,7 @@ body {
 
 
 /* Estilos de los campos de entrada */
+
 .contenedor-productos input[type="text"],
 .contenedor-productos input[type="password"] {
     width: 100%;
@@ -46,7 +47,17 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
-
+.contenedor-productos input[type="file"]{
+    width: 50%;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; 
+}
 /* Estilo de enfoque (cuando el usuario interactúa con el campo) */
 .contenedor-productos input[type="text"]:focus,
 .contenedor-productos input[type="password"]:focus {
@@ -59,7 +70,6 @@ body {
     background-color: #fff;
     /* Fondo blanco */
 }
-
 
 
 /* Estilo para el botón de inicio de sesión */
