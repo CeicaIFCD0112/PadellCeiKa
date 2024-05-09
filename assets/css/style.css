@@ -135,3 +135,142 @@ td {
 th {
     background-color: #f2f2f2;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: darkseagreen;
+}
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+.logo {
+    width: 400px; /* Ajusta el tamaño de tu logotipo según sea necesario */
+    height: auto;
+}
+.company-name {
+    font-size: 48px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+.login-button {
+    background-color: yellowgreen;
+    color: blue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 48px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.footer {
+    font-weight: bold;
+    text-align: center;
+    background-color:rgba(218, 165, 32, 0.562);
+    padding: 20px 0;
+    color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+.polygon-clipart {
+    width: 100px; /* Ajusta el tamaño del clipart según sea necesario */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Para centrar horizontalmente el clipart */
+    background-color: rgba(0, 255, 76, 0.432);
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #007bff, #00ff00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.diagonal-gradient {
+    background: linear-gradient(to bottom right, #007bff, #00ff00);
+    width: 100%;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+}
+
+
+.container {
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    color:#ccc;
+    background-color: #0ea779; /* Color de fondo del contenedor */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+h1{
+    color:#ff7b00;
+    margin-left: 80px;
+    margin-right: 35px;
+    font-size: 40px;
+}
+
+form {
+    max-width: 800px;
+    margin: 0 auto; /* Centrar el formulario dentro del contenedor */
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: calc(100% - 22px); /* Ajuste para el padding */
+    padding: 20px;
+    margin: 5px 0;
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 3px;
+    box-sizing: border-box; /* Ajustar el tamaño del cuadro de entrada */
+}
+form input[type="text"]{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form button {
+    font-size: 20px;
+    width: 98%;
+    height: 50px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #5a5c5e; /* Color de fondo del botón al pasar el ratón */
+}
+table {
+    width: 80%; /* Ancho de la tabla */
+    margin: 0 auto; /* Centrar la tabla en la página */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px; /* Espaciado interno de las celdas */
+    border: 1px solid #ddd; /* Borde de las celdas */
+    text-align: center; /* Alineación del texto en el centro */
+}
+
+th {
+    background-color: #f2f2f2; /* Color de fondo del encabezado */
+}
+
+/* Estilo para el título */
+h1 {
+    text-align: center; /* Centrar el título en la página */
+}

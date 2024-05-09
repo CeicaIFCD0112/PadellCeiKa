@@ -42,6 +42,6 @@ if (isset($_SESSION["iduser"]) && isset($_POST["idreserva"]) && isset($_POST["ju
     <title>Padel</title>
 </head>
 <body>
-    <p>Reserva completada ..</p><a href="./pistas.php">Volver</a>
+    <p>Reserva completada ..</p><a href="./bulto">Volver</a>
 </body>
 </html>

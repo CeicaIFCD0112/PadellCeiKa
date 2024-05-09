@@ -20,7 +20,7 @@ $news = $stm->fetchAll(PDO::FETCH_ASSOC);
         <?php
         // Aquí suponemos que los datos provienen de una base de datos y se almacenan en un arreglo
         // Por ejemplo, puedes reemplazar esto con una consulta de base de datos
-      
+        include("header2.php");
 
         // Iterar a través de los datos
         foreach ($news as $index => $item) {

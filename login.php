@@ -19,7 +19,7 @@ if (isset($_POST["username"])) {
             session_start();
             $_SESSION["username"] = $username;
             $_SESSION["iduser"] = $iduser;
-            header("Location: ./pistas.php");
+            header("Location: ./pistas");
             exit();
         } else {
             $error = "Usuario o Contraseña incorrecto";
@@ -29,18 +29,13 @@ if (isset($_POST["username"])) {
     }}
 
 ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="assets\css\login.css">
 </head>
 
@@ -48,18 +43,17 @@ if (isset($_POST["username"])) {
     <div class="container contenedor-productos row">
         <form action="login.php" method="post">
             <div class="modal-body">
-                <h5 class="title_login">iniciar sesión</h5>
+                <h3 class="title_login">Iniciar Sesión</h3>
                 <hr>
-                <input class="form-control " type="text" name="username" id="email" placeholder="username" required>
+                <input class="form-control " type="text" name="username" id="username" placeholder="username" required>
                 <input class="form-control" placeholder="Password" type="text" name="password" id="password" required>
             </div>
             <div class="m5px">
-                <button type="submit" class="btn_primary">Login</button>
+                <button type="submit" class="btn_primary">Log In</button>
             </div>
         </form>
-        <a href="register">
-            <p>Create new account</p>
-        </a>
+        <p>¿Aún no estás registrado? <a href="register"><span>Hazlo ahora</span></a></p>
+
     </div>
 
 
