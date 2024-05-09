@@ -35,10 +35,10 @@ if (isset($_SESSION["username"])) {
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="reservapista">Reservar Pista</a>
+                        <a class="nav-link active" aria-current="page" href="reservapista.php">Reservar Pista</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="partidasabiertas">Partidas abiertas</a>
+                        <a class="nav-link" href="partidasabiertas.php">Partidas abiertas</a>
                     </li>
                     <li class="nav-item dropdown ms-auto" style="margin-left: auto;">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
