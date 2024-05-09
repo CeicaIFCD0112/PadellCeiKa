@@ -59,7 +59,7 @@ if (isset($_SESSION["username"])) {
             </div>
         </div>
     </nav>
-    <h2>Selecion de Pistas</h2>
+    <h2>Selección de Pistas</h2>
     
         <div class="row">
             <?php
