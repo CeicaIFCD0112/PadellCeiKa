@@ -65,7 +65,7 @@ body {
     grid-template-columns: repeat(13, 1fr);
     gap: 5px;
     margin-top: 20px;
-    background-color: #5a5c5e;
+    background-color: #6f7479;
 }
 
 .form-container {
@@ -184,7 +184,7 @@ body {
     text-align: center;
     background-color:rgba(218, 165, 32, 0.562);
     padding: 20px 0;
-    color: #333;
+    color: #3f3e3e;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -267,7 +267,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #5a5c5e; /* Color de fondo del botón al pasar el ratón */
+    background-color: #777a7c; /* Color de fondo del botón al pasar el ratón */
 }
 table {
     width: 80%; /* Ancho de la tabla */
@@ -288,4 +288,7 @@ th {
 /* Estilo para el título */
 h1 {
     text-align: center; /* Centrar el título en la página */
+}
+td a{
+    color: white !important;
 }

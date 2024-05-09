@@ -14,18 +14,11 @@ body {
     background-repeat: no-repeat;
 }
 
-
 /* Estilos del formulario */
-
-
 
 .title_login {
     text-align: center;
     text-decoration-style: solid;
-
-
-
-
 }
 
 .m5px {
@@ -71,7 +64,6 @@ body {
     /* Fondo blanco */
 }
 
-
 /* Estilo para el botón de inicio de sesión */
 .btn_primary {
     background-color: #175f0c;
@@ -89,7 +81,6 @@ body {
 
 }
 
-
 .btn_primary:focus {
     background-color: #0056b3;
     /* Color de fondo más oscuro */
@@ -97,14 +88,10 @@ body {
     /* Sombra más intensa */
 }
 
-
 p{
     font-weight: bold;
     color:whitesmoke
 }
-
-
-
 
 .btn_primary2 {
     background-color: #0e2981;

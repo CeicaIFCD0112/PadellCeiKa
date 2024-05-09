@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
-    
     background-image: url('../img/peque3.png');
     background-size: cover;
     background-position: center;
@@ -26,9 +25,6 @@ body {
     margin-bottom: 20px; /* Margen inferior entre el botón y el siguiente contenido */
 }
 
-
-
-
 #top-content h1 {
     margin-top: 100px;
     font-size: 3em; /* Tamaño grande de letra */
@@ -37,21 +33,14 @@ body {
 
 /* Estilos del formulario */
 
-
-
 .title_login {
     text-align: center;
     text-decoration-style: solid;
-
-
-
-
 }
 
 .contenedor-productos{
         background-color: rgba(255, 255, 255, 0.2); /* 0.5 es la opacidad */
-    }
-    
+}
 
 /* Estilo para el botón de inicio de sesión */
 .btn_primary {
@@ -67,7 +56,6 @@ body {
     transition: background-color 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     outline: none;
-   
     display: flex;
     justify-content: space-around;
 }
@@ -80,8 +68,7 @@ body {
     /* Sombra más intensa */
 }
 
-
-p{
+.p{
     font-weight: bold;
     color:whitesmoke
 }
