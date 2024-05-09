@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    background-color: #9e1818;
+    background-image: url('../img/peque3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 50px; /* Margen inferior para separar del borde inferior */
+}
+
+#top-content {
+    margin-bottom: 20px; /* Margen inferior entre la frase y el botón */
+    color: white;
+}
+
+.m5px {
+    margin-bottom: 20px; /* Margen inferior entre el botón y el siguiente contenido */
+}
+
+
+
+
+#top-content h1 {
+    font-size: 3em; /* Tamaño grande de letra */
+    color: rgb(211, 12, 12); /* Color del texto */
+}
+
+/* Estilos del formulario */
+
+
+
+.title_login {
+    text-align: center;
+    text-decoration-style: solid;
+
+
+
+
+}
+
+
+
+
+/* Estilos de los campos de entrada */
+.contenedor-productos input[type="text"],
+.contenedor-productos input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border: 1px solid blue#ccc;
+    border-radius: 15px;
+    background-color: blue#f9f9f9;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Estilo de enfoque (cuando el usuario interactúa con el campo) */
+.contenedor-productos input[type="text"]:focus,
+.contenedor-productos input[type="password"]:focus {
+    border-color: #007bff;
+    /* Cambia el color del borde */
+    outline: none;
+    /* Elimina el borde por defecto */
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.2);
+    /* Sombra más intensa */
+    background-color: blue#fff;
+    /* Fondo blanco */
+}
+.contenedor-productos{
+        background-color: rgba(255, 255, 255, 0.2); /* 0.5 es la opacidad */
+    }
+    
+
+
+
+
+/* Estilo para el botón de inicio de sesión */
+.btn_primary {
+    background-color: #4f3e7e;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+   
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.btn_primary:focus {
+    background-color: #0056b3;
+    /* Color de fondo más oscuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Sombra más intensa */
+}
+
+
+p{
+    font-weight: bold;
+    color:whitesmoke
+}

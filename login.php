@@ -1,5 +1,3 @@
-
-
 <?php
 if (isset($_POST["username"])) {
     try {
@@ -32,32 +30,38 @@ if (isset($_POST["username"])) {
 
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inicial</title>
-    <link rel="stylesheet" href="assets\css\index.css">
+    <title>i</title>
+    <link rel="stylesheet" href="assets\css\login.css">
 </head>
 
 <body>
     <div class="container contenedor-productos row">
-        
-            <div class="m5px">
-                
-                <a href="login.php" class="btn_primary">Log In</a>
+        <form action="login.php" method="post">
+            <div class="modal-body">
+                <h3 class="title_login">Iniciar Sesión</h3>
+                <hr>
+                <input class="form-control " type="text" name="username" id="username" placeholder="username" required>
+                <input class="form-control" placeholder="Password" type="text" name="password" id="password" required>
             </div>
-        
-            
-    <div id="top-content">
-        <h1>¡NUNCA ES TEMPRANO PARA EMPEZAR!</h1>
+            <div class="m5px">
+                <button type="submit" class="btn_primary">Log In</button>
+            </div>
+        </form>
+        <p>¿Aún no estás registrado? <a href="register"><span>Hazlo ahora</span></a></p>
+
     </div>
-    <!-- Aquí va el resto del contenido de tu página -->
 
 
 </body>
 
 </html>
-

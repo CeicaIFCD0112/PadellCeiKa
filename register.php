@@ -87,6 +87,8 @@ if (isset($_POST["username"])) {
         <input class="form-control" type="password" name="password" placeholder="password">
         <input class="form-control" type="file" name="file" id="" required>
         <button class="btn btn-success btn-large" type="submit">New user</button>
+        <a href="login.php" class="btn_primary">Log In</a>
+
     </form>
     <?php
     if (isset($msg)) {
