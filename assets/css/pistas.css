@@ -1,7 +1,7 @@
 /* Configuración de la cuadrícula para el contenedor */
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* O `repeat(3, 1fr)` para 3 columnas */
+    grid-template-columns: repeat(2, 1fr); /* O `repeat(, 1fr)` para 3 columnas */
     gap: 10px; /* Espacio entre elementos de la cuadrícula */
     padding: 10px; /* Espacio interno */
     background-color: #f0f0f0; /* Color de fondo */

@@ -1,8 +1,20 @@
  /* Estilos básicos */
+
+ html, body {
+    height: 100%; /* Ajusta la altura de html y body al 100% del viewport */
+   /* Elimina cualquier relleno predeterminado */
+}
+
  body {
     font-family: Arial, sans-serif;
+    color: #5c5454; /* Color de texto gris oscuro */
+
     margin: 0;
     padding: 0;
+
+    height: 100%; /* Ajusta la altura de html y body al 100% del viewport */
+  
+    background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
 }
 
 /* Contenedor principal */
@@ -38,4 +50,13 @@
 /* Clase para alternar posiciones */
 .content-block.alternate {
     flex-direction: row-reverse;
+}
+
+
+
+
+p {
+    font-size: 16px; /* Tamaño de fuente del texto */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+    margin: 20px; /* Margen para separar el texto de los bordes */
 }

@@ -22,6 +22,7 @@ $news = $stm->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
+
     <div class="content-container">
         <?php
         // Aquí suponemos que los datos provienen de una base de datos y se almacenan en un arreglo
@@ -50,6 +51,7 @@ $news = $stm->fetchAll(PDO::FETCH_ASSOC);
         }
         ?>
     </div>
+
 </body>
 
 </html>
