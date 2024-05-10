@@ -1,6 +1,6 @@
-
-
 <?php
+$h1_text = "¡NUNCA ES TEMPRANO PARA EMPEZAR!";
+
 if (isset($_POST["username"])) {
     try {
         require_once("conexion.php");
@@ -14,7 +14,6 @@ if (isset($_POST["username"])) {
         $stm->execute();
 
         if ($stm->rowCount() > 0) {
-
             $result = $stm->fetchAll(PDO::FETCH_ASSOC);
             $username = $result[0]["username"];
             $iduser = $result[0]["iduser"];
@@ -28,10 +27,9 @@ if (isset($_POST["username"])) {
         }
     } catch (Exception $e) {
         $error = "Error interno " . $e->getMessage();
-    }}
-
+    }
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
