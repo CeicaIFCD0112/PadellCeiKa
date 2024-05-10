@@ -1,74 +1,80 @@
-body {
-    margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
-    background-image: url('../img/peque3.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.container {
+    position: relative;
+  }
+  
+  .company-name,
+  h2,h1 {
+    color:gold;
+    font-size: 36px;
+    position: absolute;
+    right: 0;
+    animation: slideAndGrow 2s forwards, centerText 1s 2s forwards;
+  }
+  h2{
+    margin-top: 60px;
+  }
+  h1{
+    margin-top: 20px;
+  }
+  
+  @keyframes slideAndGrow {
+    0% {
+      transform: translateX(100%);
+    }
+    99% {
+      font-size: 36px;
+      transform: translateX(0);
+    }
+    100% {
+      font-size: 48px;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes centerText {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .bottom-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .login-button {
+    background-color: gold;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-button a {
+    color: black;
+    text-decoration: none;
+  }
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+    /* Altura de la ventana para centrar verticalmente */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../img/fondo1.png');
 
-.container {
-    text-align: center;
-    margin-bottom: 50px; /* Margen inferior para separar del borde inferior */
-}
-
-#top-content {
-    margin-bottom: 30px; /* Margen inferior entre la frase y el botón */
-    color: white;
-}
-
-.m5px {
-    margin-bottom: 20px; /* Margen inferior entre el botón y el siguiente contenido */
-}
-
-#top-content h1 {
-    margin-top: 100px;
-    font-size: 3em; /* Tamaño grande de letra */
-    color: rgb(236, 119, 10); /* Color del texto */
-}
-
-/* Estilos del formulario */
-
-.title_login {
-    text-align: center;
-    text-decoration-style: solid;
-}
-
-.contenedor-productos{
-        background-color: rgba(255, 255, 255, 0.2); /* 0.5 es la opacidad */
-}
-
-/* Estilo para el botón de inicio de sesión */
-.btn_primary {
-    background-color: #d31dca;
-    color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    outline: none;
-    display: flex;
-    justify-content: space-around;
-}
-
-
-.btn_primary:focus {
-    background-color: #0056b3;
-    /* Color de fondo más oscuro */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    /* Sombra más intensa */
-}
-
-.p{
-    font-weight: bold;
-    color:whitesmoke
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

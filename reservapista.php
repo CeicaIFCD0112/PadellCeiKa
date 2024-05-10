@@ -57,9 +57,9 @@ function generarCalendario($mes, $anio)
     // Crear la tabla del calendario
     $output = '<table>';
     $output .= '<caption>';
-    $output .= '<a href="?mes=' . $mesAnterior . '&anio=' . $anioAnterior . '">&laquo; Mes anterior</a>';
+    $output .= '<a href="?mes=' . $mesAnterior . '&anio=' . $anioAnterior . '" style="color: black;">&laquo; Mes anterior</a>';
     $output .= ' ' . $nombreMes . ' ' . $anio . ' ';
-    $output .= '<a href="?mes=' . $mesSiguiente . '&anio=' . $anioSiguiente . '">Mes siguiente &raquo;</a>';
+    $output .= '<a href="?mes=' . $mesSiguiente . '&anio=' . $anioSiguiente . '" style="color: black;">Mes siguiente &raquo;</a>';
     $output .= '</caption>';
     $output .= '<thead>';
     $output .= '<tr>';

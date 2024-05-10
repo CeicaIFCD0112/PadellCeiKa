@@ -46,7 +46,7 @@ if (isset($_POST["username"])) {
                 <h3 class="title_login">Iniciar Sesión</h3>
                 <hr>
                 <input class="form-control " type="text" name="username" id="username" placeholder="username" required>
-                <input class="form-control" placeholder="Password" type="text" name="password" id="password" required>
+                <input class="form-control" placeholder="Password" type="password" name="password" id="password" required>
             </div>
             <div class="m5px">
                 <button type="submit" class="btn_primary">Log In</button>
