@@ -3,9 +3,9 @@
         .footer {
     font-weight: bold;
     text-align: center;
-    background-color:rgba(218, 165, 32, 0.562);
+    background-color:gold;
     padding: 20px 0;
-    color: #333;
+    color: black;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -17,7 +17,7 @@
     height: auto;
     display: block;
     margin: 0 auto; /* Para centrar horizontalmente el clipart */
-    background-color: rgba(0, 255, 76, 0.432);
+    background-color: gold;
 }
     </style>
         <p>Datos de Contacto: contact@example.com | Teléfono: 123-456-7890</p>
