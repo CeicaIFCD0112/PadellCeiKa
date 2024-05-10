@@ -42,7 +42,7 @@ document.getElementById("btnReserva").onclick = () => {
     } else {
         // Obtener la ruta actual
         const rutaActual = window.location.pathname;
-        let fecha=anio+mes+dia.toString().padStart(2,'0');
+        let fecha=anio+mes.toString().padStart(2,'0')+dia.toString().padStart(2,'0');
         // Obtener la parte de la ruta sin el nombre del archivo PHP
         const directorioRaiz = rutaActual.substring(0, rutaActual.lastIndexOf('/'));
         let url=directorioRaiz+"/reservar.php?idpista="+pista_id+"&fecha="+fecha+"&idhora="+idhora;
